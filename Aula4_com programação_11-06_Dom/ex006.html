@@ -17,9 +17,22 @@
     <h1>Iniciando os estudos com DOM</h1>
     <p>Aqui vai o resultado</p>
     <p>Aprendendo a usar o <strong>DOM</strong> em javaScript.</p>
-    <div>Clique em mim</div>
+    <div id="msg">Clique em mim</div>
 
     <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[1] //<--com este aprendi a como selecionar um determinado parágrafo --> 
+        
+        /*
+        var d = window.document.getElementById('msg')
+        d.style.background = 'green'
+        d.innerText = 'Estou aguardando...'
+        */
+       
+        // alert(p1.innerText) 
+        // corpo.style.background = 'Black' <--com este código eu consegui mudar a cor de fundo do meu site. PS:Ainda prefiro corrigir isso no css Mais gostei de ter a prendido outras formas de alterar sites sem o css-->
+        // p1.style.color = 'blue' <-- com este aprendi a alterar a cor das letras PS: Ainda prefiro no css mais gostei de ter aprendido -->
+        // window.document.write('Está escrito assim: ' + p1.innerText); <--neste aprendi a alterar o que está escrito um determinados paragrafos -->
 
     </script>
 </body>
