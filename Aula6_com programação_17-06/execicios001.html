@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUAL O SEU PAIS</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            font-weight: 300;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        #txtpais {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            outline: none;
+        }
+
+        #txtpais:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .btn-confirmar {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            font-weight: 600;
+        }
+
+        .btn-confirmar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-confirmar:active {
+            transform: translateY(0);
+        }
+
+        #Res {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            min-height: 20px;
+        }
+
+        #Res p {
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        #Res strong {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .resultado-show {
+            background: #f8f9ff;
+            border: 1px solid #e0e6ff;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Cidadania</h1>
+    Você mora no <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="confirmar" onclick="nacionalidade()">
+    <div id="Res">
+
+    </div>
+
+
+    <SCRIpt>
+
+        function nacionalidade() {
+            var pais = window.document.querySelector('input#txtpais');
+            var res = window.document.querySelector('div#Res');
+            var nac = pais.value;
+
+            res.innerHTML = `<p>O seu pais é o <strong>${nac}</strong></p>`;
+            if(nac === "Brasil" || nac === "brasil"){
+                Res.innerHTML = `<p>O seu pais é o <strong>${nac}</strong>, você é brasileiro</p>`;
+            }else{
+                Res.innerHTML = `O seu pais á o <strong>${nac}</strong> você é estrangeiro`;
+            }
+        }
+
+        /*
+            function calcular() {
+                var txtv = window.document.querySelector('input#txtvel');
+                var res = window.document.querySelector('div#res');
+                var vel = Number(txtv.value);
+
+                res.innerHTML = `<p>A sua velocidade atual é de <strong >${vel}Km/h</strong></p>`
+                if(vel > 60){
+                    res.innerHTML += `<p>Você está <strong>MULTADO</strong> por excesso de velocidade</p>`
+                }
+                res.innerHTML += `<p>Dirija sempre com o sinto de segurança!</p>`
+            }
+        */
+    </SCRIpt>
+</body>
+</html>
