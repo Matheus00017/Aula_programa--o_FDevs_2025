@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fontes externas</title>
+    <style>
+        @font-face {
+            font-family: 'ilove';
+            src: url('fonts/love story ttf.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'Love';
+            src: url('fonts/love_romance_ot.otf') format('opentype'), url('fonts/love_romance_tt.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            /*
+                tipos de format()
+                - opentype (otf)
+                - truetype (ttf)
+                - embedded-opentype
+                - truetype-aat (Apple Advanced typography)
+                -svg
+            */
+        }
+        body{
+            color: black;
+        }
+        h1{
+            font-family: 'ilove';
+        }
+    </style>
+</head>
+<body>
+    <h1>titulo</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, corporis? Voluptatem commodi laboriosam ducimus dolore provident quam atque deserunt laborum perferendis accusamus rerum saepe recusandae omnis voluptates tenetur, dolorum aut!</p>
+    <h2>Subtitulo</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, maxime autem provident odio explicabo ea cumque cum! Modi eius possimus accusamus labore. Sint dicta autem aut voluptatum quae voluptate sit!</p>
+</body>
+</html>
