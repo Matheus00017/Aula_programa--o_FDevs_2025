@@ -10,5 +10,9 @@ import { RouterModule } from '@angular/router';
   styleUrl: './first-component.css'
 })
 export class FirstComponent {
+  meuBooleano = false;
 
+  atualizaBooleano(valor: boolean){
+    this.meuBooleano = valor;
+  }
 }
