@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   standalone: true, 
   imports: [],
   templateUrl: './first-component.html',
-  styleUrl: './first-component.css'
+  styleUrls: ['./first-component.css']
 })
 export class FirstComponent {
   name: string = 'Matheus';

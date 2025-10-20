@@ -9,11 +9,12 @@ import { Emitter } from './components/emitter/emitter';
 import { ListRender } from './components/list-render/list-render';
 import { Pipes } from './components/pipes/pipes';
 import { TwoWayBinding } from './components/two-way-binding/two-way-binding';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @Component({
-  selector: 'app-root',                 //Esse é o seletor 
-  imports: [RouterOutlet, FirstComponent, ParentData, Directives, IfRender, Eventos, Emitter, ListRender, Pipes, TwoWayBinding],
+  selector: 'app-root',                 
+  imports: [RouterOutlet, FirstComponent, ParentData, Directives, IfRender, Eventos, Emitter, ListRender, Pipes, TwoWayBinding, AppRoutingModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
