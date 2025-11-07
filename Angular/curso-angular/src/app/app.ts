@@ -1,31 +1,17 @@
-import { Component, Directive, signal, } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { FirstComponent } from './components/first-component/first-component';
-import { ParentData } from './components/parent-data/parent-data';
-import { Directives } from './components/directives/directives';
-import { IfRender } from './components/if-render/if-render';
-import { Eventos } from './components/eventos/eventos';
-import { Emitter } from './components/emitter/emitter';
-import { ListRender } from './components/list-render/list-render';
-import { Pipes } from './components/pipes/pipes';
-import { TwoWayBinding } from './components/two-way-binding/two-way-binding';
-import { AppRoutingModule } from './app-routing.module';
-
+import { Component } from '@angular/core';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-root',                 
-  imports: [RouterOutlet, FirstComponent, ParentData, Directives, IfRender, Eventos, Emitter, ListRender, Pipes, TwoWayBinding, AppRoutingModule],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, RouterLink],
+  template: `
+    <h1>Meu Site Angular</h1>
+
+    <a routerLink="/">Home</a> |
+    <a routerLink="/lista">Lista</a>
+
+    <router-outlet></router-outlet>
+  `
 })
-
-export class App {
-  protected readonly title = signal('curso-angular');
-
-  userName = 'Joaquim'
-
-  userData = {
-    email: 'Joaquim@email.com',
-    role: 'Admin',
-  };
-}
+export class AppComponent {}
