@@ -4,6 +4,7 @@
         {"id": 2, "name": "Tom", "type": "cat", "age": 2},
         {"id": 3, "name": "Jerry", "type": "mouse", "age": 1},
         {"id": 4, "name": "Donald", "type": "duck", "age": 3},
-        {"id": 5, "name": "Scooby Doo", "type": "dog", "age": 5}
+        {"id": 5, "name": "Scooby Doo", "type": "dog", "age": 5},
+        {"id": 6, "name": "Piu Piu", "type": "bird", "age": 5}
     ]
 }

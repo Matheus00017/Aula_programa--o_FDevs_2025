@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Animal } from '../../Animal';
 import { ListService } from '../../services/list.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-list-render',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink ],
   templateUrl: './list-render.html',
   styleUrls: ['./list-render.css']
 })
@@ -29,6 +30,9 @@ export class ListRender {
   }
 
   getAnimals(): void {
-    this.listService.getAll() .subscribe((animals) => (this.animals = animals)); 
+  this.listService.getAll().subscribe((animals) => {
+    console.log("Animais carregados:", animals);  // apenas para verificar
+    this.animals = animals;  // salva na lista para renderizar no HTML
+  });
   }
 }
