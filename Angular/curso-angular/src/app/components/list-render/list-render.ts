@@ -24,15 +24,34 @@ export class ListRender {
   this.animalDetails = `O pet ${Animal.name} tem ${Animal.age} anos!`
   }
 
-  removeAnimal(animal: Animal) {
-    console.log('Removendo animal...')
-    this.animals = this.listService.remove(this.animals, animal);
+  removeAnimal(animal: Animal): void {
+    if (!animal.id) return;
+
+    console.log('Removendo animal...');
+
+    this.listService.removeAnimal(animal.id).subscribe({
+      next: () => {
+        // Remove da lista só depois que o backend confirmar
+        this.animals = this.animals.filter(a => a.id !== animal.id);
+        console.log('Animal removido!');
+      },
+      error: (err) => {
+        console.error('Erro ao remover:', err);
+        alert('Erro ao remover animal!');
+      }
+    });
+
   }
 
   getAnimals(): void {
-  this.listService.getAll().subscribe((animals) => {
-    console.log("Animais carregados:", animals);  // apenas para verificar
-    this.animals = animals;  // salva na lista para renderizar no HTML
-  });
+    this.listService.getAll().subscribe({
+      next: (animals) => {
+        console.log("Animais carregados:", animals);
+        this.animals = animals;
+      },
+      error: (err) => {
+        console.error('Erro ao carregar:', err);
+      }
+    });
   }
 }

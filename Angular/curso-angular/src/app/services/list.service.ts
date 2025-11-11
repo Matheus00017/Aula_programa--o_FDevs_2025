@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ListService {  
   
-  private apiUrl   = 'http://localhost:3000/animal'
+  private apiUrl   = 'http://localhost:3000/animals'
 
   constructor(private http: HttpClient) {}
 
@@ -18,5 +18,13 @@ export class ListService {
 
   getAll(): Observable<Animal[]> {
   return this.http.get<Animal[]>(this.apiUrl)
+  }
+
+  getItem(id: number): Observable<Animal> {
+    return this.http.get<Animal>(`${this.apiUrl}/${id}`)
+  }
+
+  removeAnimal(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

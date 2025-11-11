@@ -12,7 +12,8 @@ import { HttpClientModule} from '@angular/common/http'
 
     <a routerLink="/">Home</a> |
     <a routerLink="/list">Lista</a> |
-    <a routerLink="/parent">parent</a>
+    <a routerLink="/parent">parent</a> |
+    <a routerLink="/item">item</a>
 
     <router-outlet></router-outlet>
   `

@@ -1,5 +1,5 @@
 {
-    "animal": [
+    "animals": [
         {"id": 1, "name": "Spyke", "type": "dog", "age": 4},
         {"id": 2, "name": "Tom", "type": "cat", "age": 2},
         {"id": 3, "name": "Jerry", "type": "mouse", "age": 1},
