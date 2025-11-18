@@ -20,8 +20,8 @@ export class ListRender {
     this.getAnimals()
   }
 
-  showAge(Animal: Animal) {
-  this.animalDetails = `O pet ${Animal.name} tem ${Animal.age} anos!`
+  showAge(animal: Animal): void {
+  this.animalDetails = `O pet ${animal.name} tem ${animal.age} anos!`
   }
 
   removeAnimal(animal: Animal): void {
